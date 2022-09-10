@@ -1,0 +1,1170 @@
+bash: /c/Users/HP/Code/addseq2.sh: No such file or directory
+
+HP@LAPTOP-I8H07HHI MINGW64 ~
+$ git --version
+git version 2.35.1.windows.2
+
+HP@LAPTOP-I8H07HHI MINGW64 ~
+$ git user.name
+git: 'user.name' is not a git command. See 'git --help'.
+
+HP@LAPTOP-I8H07HHI MINGW64 ~
+$ user.name
+bash: user.name: command not found
+
+HP@LAPTOP-I8H07HHI MINGW64 ~
+$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+HP@LAPTOP-I8H07HHI MINGW64 ~
+$ git config list
+error: key does not contain a section: list
+
+HP@LAPTOP-I8H07HHI MINGW64 ~
+$ git config --list
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+http.sslbackend=openssl
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.required=true
+filter.lfs.process=git-lfs filter-process
+credential.helper=manager-core
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=Nishannt
+user.email=banginwar.nishant1@gmail.com
+
+HP@LAPTOP-I8H07HHI MINGW64 ~
+$ pwd
+/c/Users/HP
+
+HP@LAPTOP-I8H07HHI MINGW64 ~
+$ mkdir Git_Demo
+
+HP@LAPTOP-I8H07HHI MINGW64 ~
+$ cd Git_demo
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo
+$ pwd
+/c/Users/HP/Git_demo
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo
+$ mkdir SimplRepo
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo
+$ cd SimplRepo
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo
+$ pwd
+/c/Users/HP/Git_demo/SimplRepo
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo
+$ git init
+Initialized empty Git repository in C:/Users/HP/Git_Demo/SimplRepo/.git/
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ ll
+total 0
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ touch master.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ notepad master.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        master.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git add .
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   master.txt
+
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git commit -m "First"
+[master (root-commit) 54e5232] First
+ 1 file changed, 1 insertion(+)
+ create mode 100644 master.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git log
+commit 54e52326cacc465a86766f4c0f1f972ae0c89843 (HEAD -> master)
+Author: Nishannt <banginwar.nishant1@gmail.com>
+Date:   Thu Sep 8 11:30:30 2022 +0530
+
+    First
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ touch master1.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ notepad master1.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ notepad master.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   master.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        master1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git add .
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   master.txt
+        new file:   master1.txt
+
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git commit -m "second"
+[master 8e91e87] second
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+ create mode 100644 master1.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git log
+commit 8e91e8723645bd0464c32bde4ed826d213439741 (HEAD -> master)
+Author: Nishannt <banginwar.nishant1@gmail.com>
+Date:   Thu Sep 8 11:33:09 2022 +0530
+
+    second
+
+commit 54e52326cacc465a86766f4c0f1f972ae0c89843
+Author: Nishannt <banginwar.nishant1@gmail.com>
+Date:   Thu Sep 8 11:30:30 2022 +0530
+
+    First
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git remote add origin https://github.com/Nish111/SimplRepo.git
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git remote -v
+origin  https://github.com/Nish111/SimplRepo.git (fetch)
+origin  https://github.com/Nish111/SimplRepo.git (push)
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git push -u origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (7/7), 538 bytes | 269.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Nish111/SimplRepo.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ ssh-keygen -t rsa -C banginwar.nishant1@gmail.com
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/HP/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/HP/.ssh/id_rsa
+Your public key has been saved in /c/Users/HP/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:EqYAELGQtYFrQLgSAgpQodZx3HmKGm1SOHl3jv3v5Go banginwar.nishant1@gmail.com
+The key's randomart image is:
++---[RSA 3072]----+
+|/O=o+.. .        |
+|@+.*o+ + o       |
+|*=o.= = B        |
+|=. + * + o       |
+|o   * . S .      |
+|   .   .   .     |
+|            ..   |
+|           Eo.   |
+|          ..oo   |
++----[SHA256]-----+
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ ssh -T git@github.com
+The authenticity of host 'github.com (20.207.73.82)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Hi Nish111! You've successfully authenticated, but GitHub does not provide shell access.
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ pwd
+/c/Users/HP/Git_demo/SimplRepo
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ cd ..
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo
+$ ls
+SimplRepo/
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo
+$ git clone git@github.com:Nish111/git-github.git
+Cloning into 'git-github'...
+remote: Enumerating objects: 6, done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 6
+Receiving objects: 100% (6/6), done.
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo
+$ ls
+SimplRepo/  git-github/
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo
+$ cd git-github
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ la
+bash: la: command not found
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ ls
+README.md
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ notepad second.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        second.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git add .
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git commit -m "1st commit clone repo"
+[master f57a5d3] 1st commit clone repo
+ 1 file changed, 1 insertion(+)
+ create mode 100644 second.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git remote -v
+origin  git@github.com:Nish111/git-github.git (fetch)
+origin  git@github.com:Nish111/git-github.git (push)
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 339 bytes | 339.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Nish111/git-github.git
+   b86f83d..f57a5d3  master -> master
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+f57a5d31a4959221b0b912066c4844ea653b767e (HEAD -> master, origin/master, origin/HEAD) 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        m3.txt
+        m4.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git add .
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git commit -m "c2"
+[master e0bbef1] c2
+ 2 files changed, 2 insertions(+)
+ create mode 100644 m3.txt
+ create mode 100644 m4.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 363 bytes | 363.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Nish111/git-github.git
+   f57a5d3..e0bbef1  master -> master
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+e0bbef19057f70301067cf56d53a59fb64416d4f (HEAD -> master, origin/master, origin/HEAD) c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   m3.txt
+        modified:   m4.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        m3.txt.bak
+        m4.txt.bak
+        m5.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git add .
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git commit -m "final"
+[master a878122] final
+ 5 files changed, 8 insertions(+), 1 deletion(-)
+ create mode 100644 m3.txt.bak
+ create mode 100644 m4.txt.bak
+ create mode 100644 m5.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 502 bytes | 502.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Nish111/git-github.git
+   e0bbef1..a878122  master -> master
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d (HEAD -> master, origin/master, origin/HEAD) final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d (HEAD -> master, origin/master, origin/HEAD) final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ vi m1.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git add .
+warning: LF will be replaced by CRLF in m1.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git commit -m "c1: adding m1.txt"
+[master e7da263] c1: adding m1.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 m1.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ vi m2.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git add .
+warning: LF will be replaced by CRLF in m2.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git commit -m "c2: adding m2.txt"
+[master 44f03c9] c2: adding m2.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 m2.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ vi m3.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git add .
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git commit -m "c3: adding m3.txt ac changes"
+[master 96abba2] c3: adding m3.txt ac changes
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ vi m1.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ vi m2.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git add .
+warning: LF will be replaced by CRLF in m1.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in m2.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git commit -m "c4" changes to m1.txt and 2.txt"
+>
+> c^C
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git commit -m "c4: changes to m1.txt and 2.txt"
+[master 8835e16] c4: changes to m1.txt and 2.txt
+ 2 files changed, 2 insertions(+)
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ vi m4.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git add .
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git commit -m "c5: added m4.txt ac changes"
+[master fe826a7] c5: added m4.txt ac changes
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git push origin master
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (16/16), 1.42 KiB | 729.00 KiB/s, done.
+Total 16 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), done.
+To github.com:Nish111/git-github.git
+   a878122..fe826a7  master -> master
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+fe826a7deb9928dbf415c9ebea5730ff108c14dd (HEAD -> master, origin/master, origin/HEAD) c5: added m4.txt ac changes
+8835e16334e1e63cb219a376a136948f22610733 c4: changes to m1.txt and 2.txt
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git reset --soft 96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf (HEAD -> master) c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   m1.txt
+        modified:   m2.txt
+        modified:   m4.txt
+
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ notepad m6.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   m1.txt
+        modified:   m2.txt
+        modified:   m4.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        m6.txt
+
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git add .
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git commit -m "c4: rewriting history"
+[master df31f48] c4: rewriting history
+ 4 files changed, 6 insertions(+), 1 deletion(-)
+ create mode 100644 m6.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+df31f48ac057378feb26b4cb61d6aedea93e05a5 (HEAD -> master) c4: rewriting history
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git push origin master
+To github.com:Nish111/git-github.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'github.com:Nish111/git-github.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git pull
+hint: Waiting for your editor to close the file...       0 [sig] bash 1059! sigpacket::process: Suppressing signal 18 to win32 process (pid 11916)
+Merge made by the 'ort' strategy.
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+21acaa61c0ea78c45ee98bee502604f607c0362e (HEAD -> master) Merge branch 'master' of github.com:Nish111/git-github
+df31f48ac057378feb26b4cb61d6aedea93e05a5 c4: rewriting history
+fe826a7deb9928dbf415c9ebea5730ff108c14dd (origin/master, origin/HEAD) c5: added m4.txt ac changes
+8835e16334e1e63cb219a376a136948f22610733 c4: changes to m1.txt and 2.txt
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+:
+21acaa61c0ea78c45ee98bee502604f607c0362e (HEAD -> master) Merge branch 'master' of github.com:Nish111/git-github
+df31f48ac057378feb26b4cb61d6aedea93e05a5 c4: rewriting history
+fe826a7deb9928dbf415c9ebea5730ff108c14dd (origin/master, origin/HEAD) c5: added m4.txt ac changes
+8835e16334e1e63cb219a376a136948f22610733 c4: changes to m1.txt and 2.txt
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+:...skipping...
+21acaa61c0ea78c45ee98bee502604f607c0362e (HEAD -> master) Merge branch 'master' of github.com:Nish111/git-github
+df31f48ac057378feb26b4cb61d6aedea93e05a5 c4: rewriting history
+fe826a7deb9928dbf415c9ebea5730ff108c14dd (origin/master, origin/HEAD) c5: added m4.txt ac changes
+8835e16334e1e63cb219a376a136948f22610733 c4: changes to m1.txt and 2.txt
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+      0 [sig] bash 1073! sigpacket::process: Suppressing signal 18 to win32 process (pid 11620)
+21acaa61c0ea78c45ee98bee502604f607c0362e (HEAD -> master) Merge branch 'master' of github.com:Nish111/git-github
+df31f48ac057378feb26b4cb61d6aedea93e05a5 c4: rewriting history
+fe826a7deb9928dbf415c9ebea5730ff108c14dd (origin/master, origin/HEAD) c5: added m4.txt ac changes
+8835e16334e1e63cb219a376a136948f22610733 c4: changes to m1.txt and 2.txt
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+21acaa61c0ea78c45ee98bee502604f607c0362e (HEAD -> master) Merge branch 'master' of github.com:Nish111/git-github
+df31f48ac057378feb26b4cb61d6aedea93e05a5 c4: rewriting history
+fe826a7deb9928dbf415c9ebea5730ff108c14dd (origin/master, origin/HEAD) c5: added m4.txt ac changes
+8835e16334e1e63cb219a376a136948f22610733 c4: changes to m1.txt and 2.txt
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git push origin master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 478 bytes | 478.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To github.com:Nish111/git-github.git
+   fe826a7..21acaa6  master -> master
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+21acaa61c0ea78c45ee98bee502604f607c0362e (HEAD -> master, origin/master, origin/HEAD) Merge branch 'master' of github.com:Nish111/git-github
+df31f48ac057378feb26b4cb61d6aedea93e05a5 c4: rewriting history
+fe826a7deb9928dbf415c9ebea5730ff108c14dd c5: added m4.txt ac changes
+8835e16334e1e63cb219a376a136948f22610733 c4: changes to m1.txt and 2.txt
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ ls
+README.md  m1.txt  m2.txt  m3.txt  m3.txt.bak  m4.txt  m4.txt.bak  m5.txt  m6.txt  second.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git revert 44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b
+CONFLICT (modify/delete): m2.txt deleted in parent of 44f03c9 (c2: adding m2.txt) and modified in HEAD.  Version HEAD of m2.txt left in tree.
+error: could not revert 44f03c9... c2: adding m2.txt
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master|REVERTING)
+$ git revert 96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master|REVERTING)
+$ git add .
+warning: LF will be replaced by CRLF in m2.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master|REVERTING)
+$ git commit -m "before revert"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You are currently reverting commit 44f03c9.
+  (all conflicts fixed: run "git revert --continue")
+  (use "git revert --skip" to skip this patch)
+  (use "git revert --abort" to cancel the revert operation)
+
+nothing to commit, working tree clean
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master|REVERTING)
+$ git push origin master
+Everything up-to-date
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master|REVERTING)
+$ git log --pretty=oneline
+21acaa61c0ea78c45ee98bee502604f607c0362e (HEAD -> master, origin/master, origin/HEAD) Merge branch 'master' of github.com:Nish111/git-github
+df31f48ac057378feb26b4cb61d6aedea93e05a5 c4: rewriting history
+fe826a7deb9928dbf415c9ebea5730ff108c14dd c5: added m4.txt ac changes
+8835e16334e1e63cb219a376a136948f22610733 c4: changes to m1.txt and 2.txt
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master|REVERTING)
+$ git revert 44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b
+CONFLICT (modify/delete): m2.txt deleted in parent of 44f03c9 (c2: adding m2.txt) and modified in HEAD.  Version HEAD of m2.txt left in tree.
+error: could not revert 44f03c9... c2: adding m2.txt
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master|REVERTING)
+$ git revert fe826a7deb9928dbf415c9ebea5730ff108c14dd
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master|REVERTING)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You are currently reverting commit 44f03c9.
+  (fix conflicts and run "git revert --continue")
+  (use "git revert --skip" to skip this patch)
+  (use "git revert --abort" to cancel the revert operation)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+        deleted by them: m2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master|REVERTING)
+$ git revert --skip
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+21acaa61c0ea78c45ee98bee502604f607c0362e (HEAD -> master, origin/master, origin/HEAD) Merge branch 'master' of github.com:Nish111/git-github
+df31f48ac057378feb26b4cb61d6aedea93e05a5 c4: rewriting history
+fe826a7deb9928dbf415c9ebea5730ff108c14dd c5: added m4.txt ac changes
+8835e16334e1e63cb219a376a136948f22610733 c4: changes to m1.txt and 2.txt
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git revert 8835e16334e1e63cb219a376a136948f22610733
+[master 8378b72] Revert "c4: changes to m1.txt and 2.txt"
+ 2 files changed, 2 deletions(-)
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+8378b7244ab1f743cbec2f7d30aaa8f85f846117 (HEAD -> master) Revert "c4: changes to m1.txt and 2.txt"
+21acaa61c0ea78c45ee98bee502604f607c0362e (origin/master, origin/HEAD) Merge branch 'master' of github.com:Nish111/git-github
+df31f48ac057378feb26b4cb61d6aedea93e05a5 c4: rewriting history
+fe826a7deb9928dbf415c9ebea5730ff108c14dd c5: added m4.txt ac changes
+8835e16334e1e63cb219a376a136948f22610733 c4: changes to m1.txt and 2.txt
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ ls
+README.md  m1.txt  m2.txt  m3.txt  m3.txt.bak  m4.txt  m4.txt.bak  m5.txt  m6.txt  second.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ cd ..
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo
+$ ls
+SimplRepo/  git-github/
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo
+$ cd SimplRepo
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ vi name.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ vi employees.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        employees.txt
+        name.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git add .
+warning: LF will be replaced by CRLF in employees.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in name.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git commit -m "Branch change one"
+[master 23468d0] Branch change one
+ 2 files changed, 5 insertions(+)
+ create mode 100644 employees.txt
+ create mode 100644 name.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git log --pretty=online
+fatal: invalid --pretty format: online
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git log --pretty=oneline
+23468d013c5adbc0463394ab4e75313a8f393ef0 (HEAD -> master) Branch change one
+8e91e8723645bd0464c32bde4ed826d213439741 (origin/master) second
+54e52326cacc465a86766f4c0f1f972ae0c89843 First
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git branch blr_branch
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git branch -v
+  blr_branch 23468d0 Branch change one
+* master     23468d0 [ahead 1] Branch change one
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git checkout blr_branch
+Switched to branch 'blr_branch'
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (blr_branch)
+$ ls
+employees.txt  master.txt  master1.txt  name.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (blr_branch)
+$ git branch -v
+* blr_branch 23468d0 Branch change one
+  master     23468d0 [ahead 1] Branch change one
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (blr_branch)
+$ vi address.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (blr_branch)
+$ git add .
+warning: LF will be replaced by CRLF in address.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (blr_branch)
+$ git commit -m "blr branch commmit"
+[blr_branch 7a34b96] blr branch commmit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 address.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (blr_branch)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git checkout blr_branch
+Switched to branch 'blr_branch'
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (blr_branch)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 389 bytes | 389.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Nish111/SimplRepo.git
+   8e91e87..23468d0  master -> master
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git push -origin blr_branch
+fatal: 'blr_branch' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git push -u origin blr_branch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 293 bytes | 293.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'blr_branch' on GitHub by visiting:
+remote:      https://github.com/Nish111/SimplRepo/pull/new/blr_branch
+remote:
+To https://github.com/Nish111/SimplRepo.git
+ * [new branch]      blr_branch -> blr_branch
+branch 'blr_branch' set up to track 'origin/blr_branch'.
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git check out blr_branch
+git: 'check' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git checkout blr_branch
+Switched to branch 'blr_branch'
+Your branch is up to date with 'origin/blr_branch'.
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (blr_branch)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git merge blr_branch
+Updating 23468d0..7a34b96
+Fast-forward
+ address.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 address.txt
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git log --pretty=oneline
+7a34b966e36451edf9d48640f71dd89c422eb12b (HEAD -> master, origin/blr_branch, blr_branch) blr branch commmit
+23468d013c5adbc0463394ab4e75313a8f393ef0 (origin/master) Branch change one
+8e91e8723645bd0464c32bde4ed826d213439741 second
+54e52326cacc465a86766f4c0f1f972ae0c89843 First
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Nish111/SimplRepo.git
+   23468d0..7a34b96  master -> master
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git branch -D blr_branch
+Deleted branch blr_branch (was 7a34b96).
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git branch -v
+* master 7a34b96 blr branch commmit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git push origin --delete blr_branch
+To https://github.com/Nish111/SimplRepo.git
+ - [deleted]         blr_branch
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ git log --pretty=oneline
+7a34b966e36451edf9d48640f71dd89c422eb12b (HEAD -> master, origin/master) blr branch commmit
+23468d013c5adbc0463394ab4e75313a8f393ef0 Branch change one
+8e91e8723645bd0464c32bde4ed826d213439741 second
+54e52326cacc465a86766f4c0f1f972ae0c89843 First
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/SimplRepo (master)
+$ cd ..
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo
+$ ls
+SimplRepo/  git-github/
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo
+$ cd git-github
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 380 bytes | 380.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:Nish111/git-github.git
+   21acaa6..8378b72  master -> master
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$ git log --pretty=oneline
+8378b7244ab1f743cbec2f7d30aaa8f85f846117 (HEAD -> master, origin/master, origin/HEAD) Revert "c4: changes to m1.txt and 2.txt"
+21acaa61c0ea78c45ee98bee502604f607c0362e Merge branch 'master' of github.com:Nish111/git-github
+df31f48ac057378feb26b4cb61d6aedea93e05a5 c4: rewriting history
+fe826a7deb9928dbf415c9ebea5730ff108c14dd c5: added m4.txt ac changes
+8835e16334e1e63cb219a376a136948f22610733 c4: changes to m1.txt and 2.txt
+96abba2f8e1eaac19a2f09db2fbcba7e85bb0fcf c3: adding m3.txt ac changes
+44f03c92ef88b0dad9ddb55c37f8f2d4af396b8b c2: adding m2.txt
+e7da2638ffa862cdd1ca6c7156247071c364b5c7 c1: adding m1.txt
+a8781222c413fa463f560fa7ac7d8804fa9e1f8d final
+e0bbef19057f70301067cf56d53a59fb64416d4f c2
+f57a5d31a4959221b0b912066c4844ea653b767e 1st commit clone repo
+b86f83d859b014ce92c19a3782403f5b6a8d8242 Update README.md
+d92c0eb4096c87d4ebbdcc2e492e972de3117e8c Initial commit
+
+HP@LAPTOP-I8H07HHI MINGW64 ~/Git_demo/git-github (master)
+$
